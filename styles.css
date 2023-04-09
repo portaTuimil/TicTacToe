@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Mukta:wght@500&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #385170; 
+}
+
+.main-div{
+    margin-top: 5vh;
+    height: 550px;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 24px 2px;
+    display: grid;
+    grid-template-columns: 1fr 500px 1fr;
+
+}
+
+.grid{
+    margin:auto;
+    border-color: red;
+    height: 500px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/*Buttons*/
+.grid > button{
+    background-color: #385170; 
+    cursor: pointer;
+    border: solid 2px black;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.btn-0, .btn-3, .btn-6{
+    border-left: none !important;
+}
+
+.btn-0, .btn-1, .btn-2{
+    border-top: none !important;
+}
+
+.btn-2, .btn-5, .btn-8{
+    border-right: none !important;
+}
+
+.btn-6, .btn-7, .btn-8{
+    border-bottom: none !important;
+}
+
+p{
+    font-size: 7rem;
+}
+
+.bottom-nav{
+    height: 15vh;
+    width: 90%;
+    margin-top: 5vh;
+    background-color: #0c2233; 
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    overflow: hidden;
+}
+
+.bottom-nav > div{
+    display: grid;
+    grid-template-rows: 20% 30% 30% 20%;
+}
+
+.bottom-nav > div > h2{
+    margin: auto;
+    font-size: 2rem;
+    font-family: 'Lora', serif;
+    color: #ececec; 
+    grid-row: 2;
+    
+}
+
+.bottom-nav > div > p{
+    margin: auto;
+    font-size: 2rem;
+    font-family: 'Lora', serif;
+    color: #ececec; 
+    grid-row: 3;
+    
+}
