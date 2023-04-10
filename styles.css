@@ -28,7 +28,6 @@ body{
 
 .grid{
     margin:auto;
-    border-color: red;
     height: 500px;
     width: 100%;
     display: grid;

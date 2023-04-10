@@ -5,12 +5,13 @@ let list = ['','','',
             '','','',
             '','',''];
 
-buttons.forEach(button=> button.addEventListener('click', (e)=>{
-    let divClass = e.target.getAttribute("class");
+buttons.forEach(button=> button.addEventListener('click', ()=>{
+    let divClass = button.getAttribute('class');
     let div = document.querySelector('.'+divClass)
+    let number = divClass[4];
 
     //Display
-    if (div.getElementsByTagName('*').length === 0) {
+    if (list[number]=== '') {
         let p = document.createElement('p')
         let simbol;
         if (turn % 2 == 0){
@@ -26,8 +27,7 @@ buttons.forEach(button=> button.addEventListener('click', (e)=>{
         div.appendChild(p);
 
         //Value Storage:
-        let position = e.target.getAttribute("class")[4];
-        list.splice(position, 1, simbol);
+        list.splice(number, 1, simbol);
         console.log(list)
 
         checkWins()
@@ -48,21 +48,49 @@ function checkWins(){
     for (let combination of winnerCombinations){
 
         if (list[combination[0]] === 'X' && list[combination[1]]=== 'X' && list[combination[2]] === 'X'){
-            console.log('Winner X')
+            playerX.wins++;
+            reset()
         }else if (list[combination[0]] === 'O' && list[combination[1]]=== 'O' && list[combination[2]] === 'O'){
-            console.log('Winner O')
+            playerY.wins++;
+            reset()
+        }else if (list.includes('') === false){
+            draw.wins++;
+            reset();
         }
     } 
 }
 
 
 
-/*Player*/ 
+/*Players*/ 
 
-const createPlayer = (name, marker) => {
-    return {name, marker};
+const createPlayer = (name, marker, wins) => {
+    return {name, marker, wins};
 }
 
-let player1 = createPlayer(1,'X')
+let playerX = createPlayer(1,'X', 0);
+let draw = createPlayer(0, 'Z', 0)
+let playerY = createPlayer(2,'Y', 0);
 
-console.log(player1.marker)
+/*Reset && Counter*/ 
+let CounterX = document.querySelector('.player-1p');
+let CounterY = document.querySelector('.player-2p');
+let CounterZ = document.querySelector('.draw-p');
+
+function reset(){
+    buttons.forEach(button=>{
+        button.innerText= '';
+    })
+
+    //Reset Variables:
+    list = ['','','',
+            '','','',
+            '','',''];
+    turn = 0;
+
+    //Contador:
+    CounterX.innerText = playerX.wins;
+    CounterY.innerText = playerY.wins;
+    CounterZ.innerText = draw.wins;
+
+}
