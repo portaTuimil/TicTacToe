@@ -4,11 +4,13 @@ let turn = 0;
 let list = ['','','',
             '','','',
             '','',''];
+let turnDiv = document.querySelector('.turn');
 
 buttons.forEach(button=> button.addEventListener('click', ()=>{
     let divClass = button.getAttribute('class');
     let div = document.querySelector('.'+divClass)
     let number = divClass[4];
+
 
     //Display
     if (list[number]=== '') {
@@ -17,9 +19,11 @@ buttons.forEach(button=> button.addEventListener('click', ()=>{
         if (turn % 2 == 0){
             simbol = 'X';
             p.setAttribute('style', 'color: #00204a;');
+            turnDiv.innerText = "O Turn";
         }else{
             simbol = 'O';
             p.setAttribute('style', 'color: #ff9a3c; ');
+            turnDiv.innerText = "X Turn";
         }
 
         p.innerText = simbol;
@@ -92,5 +96,6 @@ function reset(){
     CounterX.innerText = playerX.wins;
     CounterY.innerText = playerY.wins;
     CounterZ.innerText = draw.wins;
+    turnDiv.innerText = "X Turn";
 
 }

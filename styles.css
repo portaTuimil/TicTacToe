@@ -4,6 +4,7 @@
 *{
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 body{
@@ -96,4 +97,26 @@ p{
     color: #ececec; 
     grid-row: 3;
     
+}
+
+.left-div{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.turn{
+    height: 10%;
+    width: 50%;
+    background-color: #407088;;
+    overflow: hidden;
+    margin-top: 15%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:  2rem;
+    font-family: 'Lora', serif;
+    color: #132743;
 }
