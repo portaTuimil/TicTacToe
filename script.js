@@ -1,14 +1,15 @@
-
 let buttons = document.querySelectorAll('.grid>button');
 let turn = 0;
 let list = ['','','',
             '','','',
             '','',''];
 let turnDiv = document.querySelector('.turn');
+let titleX = document.querySelector('.Player1');
+let titleY = document.querySelector('.Player2');
 
 buttons.forEach(button=> button.addEventListener('click', ()=>{
     let divClass = button.getAttribute('class');
-    let div = document.querySelector('.'+divClass)
+    let div = document.querySelector('.'+divClass);
     let number = divClass[4];
 
 
@@ -20,10 +21,14 @@ buttons.forEach(button=> button.addEventListener('click', ()=>{
             simbol = 'X';
             p.setAttribute('style', 'color: #00204a;');
             turnDiv.innerText = "O Turn";
+            titleX.setAttribute('style', 'color:white;');
+            titleY.setAttribute('style', 'color:#ff9a3c;');
         }else{
             simbol = 'O';
             p.setAttribute('style', 'color: #ff9a3c; ');
             turnDiv.innerText = "X Turn";
+            titleX.setAttribute('style', 'color:#ff9a3c;');
+            titleY.setAttribute('style', 'color:white;');
         }
 
         p.innerText = simbol;
@@ -32,7 +37,6 @@ buttons.forEach(button=> button.addEventListener('click', ()=>{
 
         //Value Storage:
         list.splice(number, 1, simbol);
-        console.log(list)
 
         checkWins()
 }}));
@@ -97,5 +101,7 @@ function reset(){
     CounterY.innerText = playerY.wins;
     CounterZ.innerText = draw.wins;
     turnDiv.innerText = "X Turn";
+    titleX.setAttribute('style', 'color:#ff9a3c;');
+    titleY.setAttribute('style', 'color:white;');
 
 }

@@ -65,6 +65,10 @@ p{
     font-size: 7rem;
 }
 
+.Player1{
+    color: #ff9a3c;
+}
+
 .bottom-nav{
     height: 15vh;
     width: 90%;
@@ -106,9 +110,10 @@ p{
     display: flex;
     justify-content: center;
 }
+
 .turn{
     height: 10%;
-    width: 50%;
+    width: 60%;
     background-color: #407088;;
     overflow: hidden;
     margin-top: 15%;
@@ -119,4 +124,50 @@ p{
     font-size:  2rem;
     font-family: 'Lora', serif;
     color: #132743;
+}
+
+@media(max-width: 950px){
+    .left-div{
+        display: none;
+    }
+
+    .grid{
+        width: 500px;
+        margin:auto;
+    }
+
+    .right-div{
+        display: none;
+    }
+
+    .main-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(max-height: 750px){
+    .grid{
+        height: 65vh;
+    }
+    .main-div{
+        height: 70vh;
+    }
+
+    *{
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-height: 500px){
+    *{
+        font-size: 0.5rem;
+    }
+}
+
+@media(max-width: 450px){
+    *{
+        font-size: 0.5rem;
+    }
 }
