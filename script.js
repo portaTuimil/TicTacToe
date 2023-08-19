@@ -6,6 +6,8 @@ let list = ['','','',
 let turnDiv = document.querySelector('.turn');
 let titleX = document.querySelector('.Player1');
 let titleY = document.querySelector('.Player2');
+titleX.setAttribute('style', 'color:#ff9a3c;');
+titleY.setAttribute('style', 'color:white;');
 
 buttons.forEach(button=> button.addEventListener('click', ()=>{
     let divClass = button.getAttribute('class');
